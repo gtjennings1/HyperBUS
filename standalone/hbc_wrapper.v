@@ -67,12 +67,12 @@ hbc u_hbc
 		.o_csn1(o_csn1),
 		.o_clk(o_clk),
 		.o_clkn(o_clkn),
-		.o_dq(),
-		.i_dq(),
-		.o_dq_de(),
-		.o_rwds(),
-		.i_rwds(),
-		.o_rwds_de(),
+		.o_dq(dq_o),
+		.i_dq(dq_i),
+		.o_dq_de(dq_de),
+		.o_rwds(rwds_o),
+		.i_rwds(rwds_i),
+		.o_rwds_de(rwds_de),
 		.o_resetn(o_resetn)
 	);
 
@@ -83,8 +83,8 @@ hbc_io u_hbc_io
         .RWDS_o(rwds_o),
         .DQ_de(dq_de),
         .DQ_i(dq_i),
-		.DQ_o(dq_o),
-    	.RWDS(io_rwds),
+			.DQ_o(dq_o),
+			.RWDS(io_rwds),
         .DQ(io_dq)
 	);
 
