@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<RadiantModule VendorName="Lattice Semiconductor Corporation" date="2018 08 17 11:21:27" generator="ipgen" module="pll" name="pll" source_format="Verilog" version="1.0">
+ <Package>
+  <File modified="2018 08 17 11:21:24" name="rtl/pll_bb.v" type="black_box_verilog"/>
+  <File modified="2018 08 17 11:21:24" name="rtl/pll.v" type="top_level_verilog"/>
+  <File modified="2018 08 17 11:21:24" name="misc/pll_tmpl.vhd" type="template_vhdl"/>
+  <File modified="2018 08 17 11:21:24" name="misc/pll_tmpl.v" type="template_verilog"/>
+  <File modified="2018 08 17 11:21:24" name="pll.cfg" type="cfg"/>
+  <File modified="2018 08 17 11:21:24" name="constraints/pll_timing.ldc" type="timing_constraints"/>
+  <File modified="2017 10 20 10:24:27" name="rtl/core/lscc_pll.v" type="core_verilog"/>
+ </Package>
+</RadiantModule>

@@ -1,0 +1,508 @@
+<HTML>
+<HEAD>
+<TITLE>Timing Report</TITLE>
+<link href="" rel="stylesheet" type="text/css" media="screen"/>
+<link href="" rel="stylesheet" type="text/css" media="print"/>
+<style type="text/css">
+#toc {
+  position: fixed;
+  right: 2px;
+  top: 2px;
+  padding: 2px 5px 2px 5px;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+}
+#toc_list {
+  display: none;
+  }
+</style>
+
+<script type="text/javascript">
+<!--
+function showTocList() {
+var a = document.getElementById("toc_list");
+a.style.display = "block";
+}
+
+function hideTocList() {
+var a = document.getElementById("toc_list");
+if (a)
+    a.style.display = "none";
+}
+
+//-->
+</script>
+
+</HEAD>
+
+<BODY>
+
+<DIV id="content" class="Child" onclick="hideTocList()"><PRE>
+<A name="timing_rpt_top">Timing Report</A><B><U><big></big></U></B>
+Lattice Timing Report -  Setup  and Hold, Version Radiant (64-bit) 1.0.1.350.6
+
+Fri Aug 17 11:21:27 2018
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2018 Lattice Semiconductor Corporation,  All rights reserved.
+
+Command line:    timing -db-file pll.udb -sethld -v 3 -endpoints 10 -u 10 -ports 10 -rpt-file pll_lse.twr
+
+-----------------------------------------
+Design:          pll
+Family:          iCE40UP
+Device:          iCE40UP5K
+Package:         SG48
+Performance:     High-Performance_1.2V
+-----------------------------------------
+
+
+=====================================================================
+                    Table of Contents
+=====================================================================
+<LI>    <A href=#Timing_rpt_DesignChecking>1  DESIGN CHECKING</A></LI>
+<LI>        <A href=#Timing_rpt_SDCConstraints>1.1  SDC Constraints</A></LI>
+<LI>        <A href=#Timing_rpt_CombinationalLoop>1.2  Combinational Loop</A></LI>
+<LI>    <A href=#Timing_rpt_ClockSummary>2  CLOCK SUMMARY</A></LI>
+<LI>        <A href=#Timing_rpt_Clk_1>2.1  Clock ref_clk_i_c</A></LI>
+<LI>        <A href=#Timing_rpt_Clk_2>2.2  Clock \lscc_pll_inst/u_PLL_B/OUTCORE</A></LI>
+<LI>        <A href=#Timing_rpt_Clk_3>2.3  Clock \lscc_pll_inst/u_PLL_B/OUTGLOBAL</A></LI>
+<LI>    <A href=#Timing_rpt_AnalysisSummary>3  TIMING ANALYSIS SUMMARY</A></LI>
+<LI>        <A href=#Timing_rpt_Overall>3.1  Overall (Setup and Hold)</A></LI>
+<LI>            <A href=#Timing_rpt_ConstraintCoverage>3.1.1  Constraint Coverage</A></LI>
+<LI>            <A href=#Timing_rpt_Errors>3.1.2  Timing Errors</A></LI>
+<LI>            <A href=#Timing_rpt_TotalScore>3.1.3  Total Timing Score</A></LI>
+<LI>        <A href=#Timing_rpt_SetupSummary>3.2  Setup Summary Report</A></LI>
+<LI>            <A href=#Timing_rpt_SetupConstraintSlackSummary>3.2.1  Setup Constraint Slack Summary</A></LI>
+<LI>            <A href=#Timing_rpt_SetupCriticalEndpointSummary>3.2.2  Setup Critical Endpoint Summary </A></LI>
+<LI>        <A href=#Timing_rpt_HoldSummary>3.3  Hold Summary Report</A></LI>
+<LI>            <A href=#Timing_rpt_HoldConstraintSlackSummary>3.3.1  Hold Constraint Slack Summary</A></LI>
+<LI>            <A href=#Timing_rpt_HoldCriticalEndpointSummary>3.3.2  Hold Critical Endpoint Summary </A></LI>
+<LI>        <A href=#Timing_rpt_UnconstrainedReport>3.4  Unconstrained Report</A></LI>
+<LI>            <A href=#Timing_rpt_UnconstrainedEndpoints>3.4.1  Unconstrained Start/End Points</A></LI>
+<LI>            <A href=#Timing_rpt_StartEndPointsWithoutTimingConstraints>3.4.2  Start/End Points Without Timing Constraints</A></LI>
+<LI>    <A href=#Timing_rpt_DetailedReport>4  DETAILED REPORT</A></LI>
+<LI>        <A href=#Timing_rpt_SetupDetailedReport>4.1  Setup Detailed Report</A></LI>
+<LI>            <A href=#Timing_rpt_SetupDetailedConstraint_1>4.1.1  Setup Path Details For Constraint: create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTCORE} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTCORE }] </A></LI>
+<LI>            <A href=#Timing_rpt_SetupDetailedConstraint_2>4.1.2  Setup Path Details For Constraint: create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTGLOBAL} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </A></LI>
+<LI>            <A href=#Timing_rpt_SetupDetailedConstraint_3>4.1.3  Setup Path Details For Constraint: create_clock -name {ref_clk_i_c} -period 83.3333333333333 [get_nets ref_clk_i_c]</A></LI>
+<LI>        <A href=#Timing_rpt_HoldDetailedReport>4.2  Hold Detailed Report</A></LI>
+<LI>            <A href=#Timing_rpt_HoldDetailedConstraint_1>4.2.1  Hold Path Details For Constraint: create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTCORE} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTCORE }] </A></LI>
+<LI>            <A href=#Timing_rpt_HoldDetailedConstraint_2>4.2.2  Hold Path Details For Constraint: create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTGLOBAL} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </A></LI>
+<LI>            <A href=#Timing_rpt_HoldDetailedConstraint_3>4.2.3  Hold Path Details For Constraint: create_clock -name {ref_clk_i_c} -period 83.3333333333333 [get_nets ref_clk_i_c]</A></LI>
+
+=====================================================================
+                    End of Table of Contents
+=====================================================================
+
+
+<A name="Timing_rpt_DesignChecking"></A><B><U><big>1  DESIGN CHECKING</big></U></B>
+
+<A name="Timing_rpt_SDCConstraints"></A><B><U><big>1.1  SDC Constraints</big></U></B>
+
+create_clock -name {ref_clk_i_c} -period 83.3333333333333 [get_nets ref_clk_i_c]
+create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTCORE} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTCORE }] 
+create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTGLOBAL} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTGLOBAL }] 
+
+<A name="Timing_rpt_CombinationalLoop"></A><B><U><big>1.2  Combinational Loop</big></U></B>
+
+
+<A name="Timing_rpt_ClockSummary"></A><B><U><big>2  CLOCK SUMMARY</big></U></B>
+
+<A name="Timing_rpt_Clk_1"></A><B><U><big>2.1 Clock "ref_clk_i_c"</big></U></B>
+
+create_clock -name {ref_clk_i_c} -period 83.3333333333333 [get_nets ref_clk_i_c]
+
+Single Clock Domain
+-------------------------------------------------------------------------------------------------------
+           Clock ref_clk_i_c            |                    |       Period       |     Frequency      
+-------------------------------------------------------------------------------------------------------
+ From ref_clk_i_c                       |             Target |          83.333 ns |         12.000 MHz 
+                                        | Actual (all paths) |               ---- |               ---- 
+-------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+------------------------------------------------------------------------------------------------------
+           Clock ref_clk_i_c            |   Worst Time Between Edges   |           Comment            
+------------------------------------------------------------------------------------------------------
+ From \lscc_pll_inst/u_PLL_B/OUTCORE    |                         ---- |                      No path 
+ From \lscc_pll_inst/u_PLL_B/OUTGLOBAL  |                         ---- |                      No path 
+------------------------------------------------------------------------------------------------------
+<A name="Timing_rpt_Clk_2"></A><B><U><big>2.2 Clock "\lscc_pll_inst/u_PLL_B/OUTCORE"</big></U></B>
+
+create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTCORE} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTCORE }] 
+
+Single Clock Domain
+-------------------------------------------------------------------------------------------------------
+  Clock \lscc_pll_inst/u_PLL_B/OUTCORE  |                    |       Period       |     Frequency      
+-------------------------------------------------------------------------------------------------------
+ From \lscc_pll_inst/u_PLL_B/OUTCORE    |             Target |          50.314 ns |         19.875 MHz 
+                                        | Actual (all paths) |               ---- |               ---- 
+-------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+------------------------------------------------------------------------------------------------------
+  Clock \lscc_pll_inst/u_PLL_B/OUTCORE  |   Worst Time Between Edges   |           Comment            
+------------------------------------------------------------------------------------------------------
+ From ref_clk_i_c                       |                         ---- |                      No path 
+ From \lscc_pll_inst/u_PLL_B/OUTGLOBAL  |                         ---- |                      No path 
+------------------------------------------------------------------------------------------------------
+<A name="Timing_rpt_Clk_3"></A><B><U><big>2.3 Clock "\lscc_pll_inst/u_PLL_B/OUTGLOBAL"</big></U></B>
+
+create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTGLOBAL} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTGLOBAL }] 
+
+Single Clock Domain
+-------------------------------------------------------------------------------------------------------
+ Clock \lscc_pll_inst/u_PLL_B/OUTGLOBAL |                    |       Period       |     Frequency      
+-------------------------------------------------------------------------------------------------------
+ From \lscc_pll_inst/u_PLL_B/OUTGLOBAL  |             Target |          50.314 ns |         19.875 MHz 
+                                        | Actual (all paths) |               ---- |               ---- 
+-------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+------------------------------------------------------------------------------------------------------
+ Clock \lscc_pll_inst/u_PLL_B/OUTGLOBAL |   Worst Time Between Edges   |           Comment            
+------------------------------------------------------------------------------------------------------
+ From ref_clk_i_c                       |                         ---- |                      No path 
+ From \lscc_pll_inst/u_PLL_B/OUTCORE    |                         ---- |                      No path 
+------------------------------------------------------------------------------------------------------
+
+
+<A name="Timing_rpt_AnalysisSummary"></A><B><U><big>3  TIMING ANALYSIS SUMMARY</big></U></B>
+
+<A name="Timing_rpt_Overall"></A><B><U><big>3.1  Overall (Setup and Hold)</big></U></B>
+
+<A name="Timing_rpt_ConstraintCoverage"></A><B><U><big>3.1.1  Constraint Coverage</big></U></B>
+
+Constraint Coverage: 0%
+
+<A name="Timing_rpt_Errors"></A><B><U><big>3.1.2  Timing Errors</big></U></B>
+
+Timing Errors: 0 endpoints (setup), 0 endpoints (hold)
+
+<A name="Timing_rpt_TotalScore"></A><B><U><big>3.1.3  Total Timing Score</big></U></B>
+
+Total Negative Slack: 0.000 ns (setup), 0.000 ns (hold)
+
+<A name="Timing_rpt_SetupSummary"></A><B><U><big>3.2  Setup Summary Report</big></U></B>
+
+<A name="Timing_rpt_SetupConstraintSlackSummary"></A><B><U><big>3.2.1  Setup Constraint Slack Summary</big></U></B>
+-------------------------------------------------------------------------------------------------------------------------------------------
+                                        |             |             |        |   Actual (flop to flop)   |                |                
+             SDC Constraint             |   Target    |    Slack    | Levels |   Period    |  Frequency  |  Items Scored  |  Timing Error  
+-------------------------------------------------------------------------------------------------------------------------------------------
+                                        |             |             |        |             |             |                |                
+<A name="Timing_rpt_SetupSummaryConstraint_1"></A><A href=#Timing_rpt_SetupDetailedConstraint_1>create_generated_clock -name {\lscc_pll</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_1"></A><A href=#Timing_rpt_SetupDetailedConstraint_1>_inst/u_PLL_B/OUTCORE} -source [get_pin</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_1"></A><A href=#Timing_rpt_SetupDetailedConstraint_1>s {\lscc_pll_inst/u_PLL_B/REFERENCECLK}</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_1"></A><A href=#Timing_rpt_SetupDetailedConstraint_1>] -multiply_by 53 -divide_by 32 [get_pi</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_1"></A><A href=#Timing_rpt_SetupDetailedConstraint_1>ns {\lscc_pll_inst/u_PLL_B/OUTCORE }] </A>  |    -----    |    -----    |   ---- |        ---- |        ---- |        0       |        0       
+                                        |             |             |        |             |             |                |                
+<A name="Timing_rpt_SetupSummaryConstraint_2"></A><A href=#Timing_rpt_SetupDetailedConstraint_2>create_generated_clock -name {\lscc_pll</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_2"></A><A href=#Timing_rpt_SetupDetailedConstraint_2>_inst/u_PLL_B/OUTGLOBAL} -source [get_p</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_2"></A><A href=#Timing_rpt_SetupDetailedConstraint_2>ins {\lscc_pll_inst/u_PLL_B/REFERENCECL</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_2"></A><A href=#Timing_rpt_SetupDetailedConstraint_2>K}] -multiply_by 53 -divide_by 32 [get_</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_2"></A><A href=#Timing_rpt_SetupDetailedConstraint_2>pins {\lscc_pll_inst/u_PLL_B/OUTGLOBAL </A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_2"></A><A href=#Timing_rpt_SetupDetailedConstraint_2>}] </A>                                     |    -----    |    -----    |   ---- |        ---- |        ---- |        0       |        0       
+                                        |             |             |        |             |             |                |                
+<A name="Timing_rpt_SetupSummaryConstraint_3"></A><A href=#Timing_rpt_SetupDetailedConstraint_3>create_clock -name {ref_clk_i_c} -perio</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_3"></A><A href=#Timing_rpt_SetupDetailedConstraint_3>d 83.3333333333333 [get_nets ref_clk_i_</A>                                                                                                    
+<A name="Timing_rpt_SetupSummaryConstraint_3"></A><A href=#Timing_rpt_SetupDetailedConstraint_3>c]</A>                                      |    -----    |    -----    |   ---- |        ---- |        ---- |        0       |        0       
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+<A name="Timing_rpt_SetupCriticalEndpointSummary"></A><B><U><big>3.2.2  Setup Critical Endpoint Summary </big></U></B>
+
+--------------------------------------------------
+There is no end point satisfying reporting criteria
+
+Total Negative Slack: 0
+
+
+<A name="Timing_rpt_HoldSummary"></A><B><U><big>3.3  Hold Summary Report</big></U></B>
+
+<A name="Timing_rpt_HoldConstraintSlackSummary"></A><B><U><big>3.3.1  Hold Constraint Slack Summary</big></U></B>
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+                                        |             |             |        |   Actual (flop to flop)   |                |                
+             SDC Constraint             |   Target    |    Slack    | Levels |   Period    |  Frequency  |  Items Scored  |  Timing Error  
+-------------------------------------------------------------------------------------------------------------------------------------------
+                                        |             |             |        |             |             |                |                
+<A name="Timing_rpt_HoldSummaryConstraint_1"></A><A href=#Timing_rpt_HoldDetailedConstraint_1>create_generated_clock -name {\lscc_pll</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_1"></A><A href=#Timing_rpt_HoldDetailedConstraint_1>_inst/u_PLL_B/OUTCORE} -source [get_pin</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_1"></A><A href=#Timing_rpt_HoldDetailedConstraint_1>s {\lscc_pll_inst/u_PLL_B/REFERENCECLK}</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_1"></A><A href=#Timing_rpt_HoldDetailedConstraint_1>] -multiply_by 53 -divide_by 32 [get_pi</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_1"></A><A href=#Timing_rpt_HoldDetailedConstraint_1>ns {\lscc_pll_inst/u_PLL_B/OUTCORE }] </A>  |    -----    |    -----    |   ---- |        ---- |        ---- |        0       |        0       
+                                        |             |             |        |             |             |                |                
+<A name="Timing_rpt_HoldSummaryConstraint_2"></A><A href=#Timing_rpt_HoldDetailedConstraint_2>create_generated_clock -name {\lscc_pll</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_2"></A><A href=#Timing_rpt_HoldDetailedConstraint_2>_inst/u_PLL_B/OUTGLOBAL} -source [get_p</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_2"></A><A href=#Timing_rpt_HoldDetailedConstraint_2>ins {\lscc_pll_inst/u_PLL_B/REFERENCECL</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_2"></A><A href=#Timing_rpt_HoldDetailedConstraint_2>K}] -multiply_by 53 -divide_by 32 [get_</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_2"></A><A href=#Timing_rpt_HoldDetailedConstraint_2>pins {\lscc_pll_inst/u_PLL_B/OUTGLOBAL </A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_2"></A><A href=#Timing_rpt_HoldDetailedConstraint_2>}] </A>                                     |    -----    |    -----    |   ---- |        ---- |        ---- |        0       |        0       
+                                        |             |             |        |             |             |                |                
+<A name="Timing_rpt_HoldSummaryConstraint_3"></A><A href=#Timing_rpt_HoldDetailedConstraint_3>create_clock -name {ref_clk_i_c} -perio</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_3"></A><A href=#Timing_rpt_HoldDetailedConstraint_3>d 83.3333333333333 [get_nets ref_clk_i_</A>                                                                                                    
+<A name="Timing_rpt_HoldSummaryConstraint_3"></A><A href=#Timing_rpt_HoldDetailedConstraint_3>c]</A>                                      |    -----    |    -----    |   ---- |        ---- |        ---- |        0       |        0       
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+<A name="Timing_rpt_HoldCriticalEndpointSummary"></A><B><U><big>3.3.2  Hold Critical Endpoint Summary </big></U></B>
+
+--------------------------------------------------
+There is no end point satisfying reporting criteria
+
+Total Negative Slack: 0
+
+
+<A name="Timing_rpt_UnconstrainedReport"></A><B><U><big>3.4  Unconstrained Report</big></U></B>
+
+<A name="Timing_rpt_UnconstrainedEndpoints"></A><B><U><big>3.4.1  Unconstrained Start/End Points</big></U></B>
+
+Clocked but unconstrained timing start points
+--------------------------------------------------
+There is no start point satisfying reporting criteria
+
+
+Clocked but unconstrained timing end points
+--------------------------------------------------
+There is no end point satisfying reporting criteria
+
+
+<A name="Timing_rpt_StartEndPointsWithoutTimingConstraints"></A><B><U><big>3.4.2  Start/End Points Without Timing Constraints</big></U></B>
+
+I/O ports without constraint
+----------------------------
+Possible constraints to use on I/O ports are:
+set_input_delay,
+set_output_delay,
+set_max_delay,
+create_clock,
+create_generated_clock,
+...
+
+-------------------------------------------------------------------
+     Listing 5 Start or End Points      |           Type           
+-------------------------------------------------------------------
+ref_clk_i                               |                     input
+rst_n_i                                 |                     input
+lock_o                                  |                    output
+outcore_o                               |                    output
+outglobal_o                             |                    output
+-------------------------------------------------------------------
+                                        |                          
+Number of I/O ports without constraint  |                         5
+                                        |                          
+-------------------------------------------------------------------
+
+Registers without clock definition
+Define the clock for these registers.
+--------------------------------------------------
+There is no instance satisfying reporting criteria
+
+
+<A name="Timing_rpt_DetailedReport"></A><B><U><big>4  DETAILED REPORT</big></U></B>
+<A name="Timing_rpt_SetupDetailedReport"></A><B><U><big>4.1  Setup Detailed Report</big></U></B>
+<A name="Timing_rpt_SetupDetailedConstraint_1"></A><A href=#Timing_rpt_SetupSummaryConstraint_1>4.1.1  Setup path details for constraint: create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTCORE} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTCORE }] </A>
+----------------------------------------------------------------------
+0 endpoints scored, 0 timing errors detected.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+<A name="Timing_rpt_SetupDetailedConstraint_2"></A><A href=#Timing_rpt_SetupSummaryConstraint_2>4.1.2  Setup path details for constraint: create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTGLOBAL} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </A>
+----------------------------------------------------------------------
+0 endpoints scored, 0 timing errors detected.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+<A name="Timing_rpt_SetupDetailedConstraint_3"></A><A href=#Timing_rpt_SetupSummaryConstraint_3>4.1.3  Setup path details for constraint: create_clock -name {ref_clk_i_c} -period 83.3333333333333 [get_nets ref_clk_i_c]</A>
+----------------------------------------------------------------------
+0 endpoints scored, 0 timing errors detected.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+<A name="Timing_rpt_HoldDetailedReport"></A><B><U><big>4.2  Hold Detailed Report</big></U></B>
+<A name="Timing_rpt_HoldDetailedConstraint_1"></A><A href=#Timing_rpt_HoldSummaryConstraint_1>4.2.1  Hold path details for constraint: create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTCORE} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTCORE }] </A>
+----------------------------------------------------------------------
+0 endpoints scored, 0 timing errors detected.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+<A name="Timing_rpt_HoldDetailedConstraint_2"></A><A href=#Timing_rpt_HoldSummaryConstraint_2>4.2.2  Hold path details for constraint: create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTGLOBAL} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </A>
+----------------------------------------------------------------------
+0 endpoints scored, 0 timing errors detected.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+<A name="Timing_rpt_HoldDetailedConstraint_3"></A><A href=#Timing_rpt_HoldSummaryConstraint_3>4.2.3  Hold path details for constraint: create_clock -name {ref_clk_i_c} -period 83.3333333333333 [get_nets ref_clk_i_c]</A>
+----------------------------------------------------------------------
+0 endpoints scored, 0 timing errors detected.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></DIV>
+
+<DIV id="toc" class="radiant"<span onmousemove="showTocList()">Contents</span>
+<UL id="toc_list">
+<LI><A href=#timing_rpt_top>Timing Report</A></LI>
+<LI><A href=#Timing_rpt_DesignChecking>1  DESIGN CHECKING</A></LI>
+<UL>
+<LI><A href=#Timing_rpt_SDCConstraints>1.1  SDC Constraints</A></LI>
+<LI><A href=#Timing_rpt_CombinationalLoop>1.2  Combinational Loop</A></LI>
+</UL>
+<LI><A href=#Timing_rpt_ClockSummary>2  CLOCK SUMMARY</A></LI>
+<LI><A href=#Timing_rpt_AnalysisSummary>3  TIMING ANALYSIS SUMMARY</A></LI>
+<UL>
+<LI><A href=#Timing_rpt_Overall>3.1  Overall (Setup and Hold)</A></LI>
+<LI><A href=#Timing_rpt_SetupSummary>3.2  Setup Summary Report</A></LI>
+<LI><A href=#Timing_rpt_HoldSummary>3.3  Hold Summary Report</A></LI>
+<LI><A href=#Timing_rpt_UnconstrainedReport>3.4  Unconstrained Report</A></LI>
+</UL>
+<LI><A href=#Timing_rpt_DetailedReport>4  DETAILED REPORT</A></LI>
+<UL>
+<LI><A href=#Timing_rpt_SetupDetailedReport>4.1  Setup Detailed Report</A></LI>
+<LI><A href=#Timing_rpt_HoldDetailedReport>4.2  Hold Detailed Report</A></LI>
+</UL>
+</UL>
+</DIV>
+
+<button id="back_to_top" class="radiant" onclick="scrollToTop()">&lt;</button>
+<script type="text/javascript">
+<!--
+var scrollStep = 0;
+function scrollToTop(){
+   var funScroll = function() {
+      var top = document.body.scrollTop;
+      if (top == 0) {
+         scrollStep = 0;
+         return;
+      }
+      if (scrollStep == 0)
+         scrollStep = top/20 + 1;
+      top -= scrollStep;
+      if (top < 0)
+         top = 0;
+      document.body.scrollTop = top;
+      requestAnimationFrame(funScroll);
+   };
+   funScroll();
+}
+
+window.addEventListener('scroll', function(e) {
+   var backToTop = document.getElementById('back_to_top')
+   if (document.body.scrollTop > 0) {
+      backToTop.style.display = 'block';
+   } else {	backToTop.style.display = 'none'  }});
+
+//-->
+</script>
+
+<style type="text/css">
+#back_to_top {
+   bottom:20px; right:20px;
+   width:30px; height:30px;
+   font-size: 20px;
+   padding: 2px 5px 2px 5px;
+   position:fixed;
+   background-color:rgba(210,210,210,0.1);
+   border-style: solid;
+   border-color: rgba(192,192,192,0.8);
+   border-width:1px;
+   display:none;
+   -webkit-transform: rotate(90deg);
+   -webkit-transform-origin:50% 50%;
+}
+#back_to_top:focus {
+   outline-width:0px;
+}
+</style>
+
+</BODY>

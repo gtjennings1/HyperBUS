@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="214" height="340">
+<defs> 
+<path id="right-pin-arrow" d="M2,2 L9,5 L2,8 z" fill="black" />
+ <path id="left-pin-arrow" d="M9,2 L9,8 L2,5 z" fill="black" />
+ <path id="right-pins-arrow" d="M2,2 L11,6 L2,10 z" fill="black" />
+ <path id="left-pins-arrow" d="M11,2 L2,6 L11,10 z" fill="black" />
+ </defs>
+ <text x="107" y="24" fill="black" font-size="12" text-anchor="middle"> pll</text>
+<rect id="rect" x="35" y="40" width="144" height="220" style="fill-opacity:0;stroke-width:1;" stroke="black"/> 
+<text x="37" y="117.33333333333333" fill="black" font-size="12" text-anchor="start"> ref_clk_i</text>
+<line x1="10" y1="113.33333333333333" x2="32" y2="113.33333333333333"  stroke="black" stroke-width="1" /> 
+<use x="26" y="108.33333333333333" xlink:href = "#right-pin-arrow"/>
+<text x="37" y="190.66666666666666" fill="black" font-size="12" text-anchor="start"> rst_n_i</text>
+<line x1="10" y1="186.66666666666666" x2="32" y2="186.66666666666666"  stroke="black" stroke-width="1" /> 
+<use x="26" y="181.66666666666666" xlink:href = "#right-pin-arrow"/>
+<text x="177" y="99" fill="black" font-size="12" text-anchor="end"> lock_o</text>
+<line x1="179" y1="95" x2="201" y2="95"  stroke="black" stroke-width="1" /> 
+<use x="195" y="90" xlink:href = "#right-pin-arrow"/>
+<text x="177" y="154" fill="black" font-size="12" text-anchor="end"> outcore_o</text>
+<line x1="179" y1="150" x2="201" y2="150"  stroke="black" stroke-width="1" /> 
+<use x="195" y="145" xlink:href = "#right-pin-arrow"/>
+<text x="177" y="209" fill="black" font-size="12" text-anchor="end"> outglobal_o</text>
+<line x1="179" y1="205" x2="201" y2="205"  stroke="black" stroke-width="1" /> 
+<use x="195" y="200" xlink:href = "#right-pin-arrow"/>
+</svg>

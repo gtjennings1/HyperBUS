@@ -1,0 +1,163 @@
+synthesis:  version Radiant (64-bit) 1.0.1.350.6
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2018 Lattice Semiconductor Corporation,  All rights reserved.
+Fri Aug 17 11:21:24 2018
+
+
+Command Line:  synthesis -f C:\work\upwork\projects\HyperRAM\radiant\pll\for_lse\pll.lseproj 
+
+Synthesis options:
+The -a option is iCE40UP.
+The -t option is SG48.
+The -sp option is High-Performance_1.2V.
+The -p option is iCE40UP5K.
+                                                          
+
+
+##########################################################
+
+
+### Lattice Family : iCE40UP
+
+
+### Device  : iCE40UP5K
+
+
+### Package : SG48
+
+
+### Speed   : High-Performance_1.2V
+
+
+                                                         
+
+
+INFO - synthesis: User-Selected Strategy Settings
+Optimization goal = Area
+Top-level module name = pll.
+Target frequency = 1.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+RWCheckOnRam = 0
+
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+
+WARNING - synthesis: -mux_style option is not applicable for this architecture. Will be ignored.
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+WARNING - synthesis: -force_gsr option is not applicable for this architecture. Will be ignored.
+Output HDL file name = pll.vm.
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+Verilog design file = C:\work\upwork\projects\HyperRAM\radiant\pll\rtl\pll.v
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Compile design.
+Compile Design Begin
+Analyzing Verilog file c:/work/upwork/projects/hyperram/radiant/pll/rtl/pll.v. VERI-1482
+INFO - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/pll.v(9): analyzing included file c:/work/upwork/projects/hyperram/radiant/pll/rtl/core/lscc_pll.v. VERI-1328
+Analyzing Verilog file C:/lscc/radiant/1.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v. VERI-1482
+Top module name (Verilog): pll
+INFO - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/pll.v(13): compiling module pll. VERI-1018
+INFO - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/core/lscc_pll.v(56): compiling module lscc_pll(DIVR="0",DIVF="52",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000"). VERI-1018
+INFO - synthesis: C:/lscc/radiant/1.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(428): compiling module PLL_B(PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",DIVF="52",DIVQ="5",FILTER_RANGE="1",FREQUENCY_PIN_REFERENCECLK="12.000000"). VERI-1018
+WARNING - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/pll.v(48): input port sclk_i is not connected on this instance. VDB-1013
+WARNING - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/pll.v(48): input port sdi_i is not connected on this instance. VDB-1013
+Loading device for application lse from file 'itpa08.nph' in environment: C:/lscc/radiant/1.0/ispfpga.
+                                                         
+
+
+### Number of Logic Cells: 5280
+
+
+### Number of RAM Blocks: 30
+
+
+### Number of DSP Blocks: 8
+
+
+### Number of PLLs: 1
+
+
+### Number of IO Pins: 56
+
+
+##########################################################
+
+
+                                                         
+
+
+WARNING - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/pll.v(48): input port sclk_i is not connected on this instance. VDB-1013
+WARNING - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/pll.v(48): input port sdi_i is not connected on this instance. VDB-1013
+WARNING - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/pll.v(48): input port sclk_i is not connected on this instance. VDB-1013
+WARNING - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/pll.v(48): input port sdi_i is not connected on this instance. VDB-1013
+WARNING - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/core/lscc_pll.v(95): net \lscc_pll_inst/sclk_i does not have a driver. VDB-1002
+WARNING - synthesis: c:/work/upwork/projects/hyperram/radiant/pll/rtl/core/lscc_pll.v(96): net \lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+######## Missing driver on net \lscc_pll_inst/sclk_i. Patching with GND.
+######## Missing driver on net \lscc_pll_inst/sdi_i. Patching with GND.
+
+
+
+Applying 1.000000 MHz constraint to all clocks
+
+
+Starting design annotation....
+
+
+
+Starting full timing analysis...
+WARNING - synthesis: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
+
+################### Begin Area Report (pll)######################
+Number of register bits => 0 of 5280 (0 % )
+IB => 2
+OB => 3
+PLL_B => 1
+################### End Area Report ##################
+Number of odd-length carry chains : 0
+Number of even-length carry chains : 0
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 3
+  Net : lscc_pll_inst/outcore_o_c, loads : 1
+  Net : ref_clk_i_c, loads : 1
+  Net : lscc_pll_inst/outglobal_o_c, loads : 1
+Clock Enable Nets
+Number of Clock Enables: 0
+Top 0 highest fanout Clock Enables:
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : rst_n_i_c, loads : 1
+  Net : lscc_pll_inst/feedback_w, loads : 1
+  Net : lscc_pll_inst/lock_o_c, loads : 0
+  Net : lock_o, loads : 0
+  Net : outglobal_o, loads : 0
+  Net : outcore_o, loads : 0
+################### End Clock Report ##################
+
+Peak Memory Usage: 88.020  MB
+
+--------------------------------------------------------------
+Total CPU time for LSE flow : 3.307  secs
+Total REAL time for LSE flow : 3.000  secs
+--------------------------------------------------------------

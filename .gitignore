@@ -1,2 +1,8 @@
 copyright.txt
+radiant/*
+!radiant/src/
+!radiant/pll/
+!radiant/*.pdc
+!radiant/*.rdf
+
 

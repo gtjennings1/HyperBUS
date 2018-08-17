@@ -1,0 +1,4 @@
+create_clock -name {ref_clk_i_c} -period 83.3333333333333 [get_nets ref_clk_i_c]
+create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTCORE} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTCORE }] 
+create_generated_clock -name {\lscc_pll_inst/u_PLL_B/OUTGLOBAL} -source [get_pins {\lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 53 -divide_by 32 [get_pins {\lscc_pll_inst/u_PLL_B/OUTGLOBAL }] 
+

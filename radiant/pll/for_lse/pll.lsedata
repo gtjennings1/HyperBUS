@@ -1,0 +1,110 @@
+<top name = "pll"  library = "work"  arch = ""  entry = "Verilog">
+
+<clocks>
+    <clockitem name = "ref_clk_i"  type = "port" />
+    <clockitem name = "outcore_o"  type = "net" />
+    <clockitem name = "outglobal_o"  type = "net" />
+    <clockitem name = "lscc_pll_inst/outcoreb_o"  type = "net" />
+    <clockitem name = "lscc_pll_inst/outglobalb_o"  type = "net" />
+</clocks>
+
+<!--
+    //=============================================================
+    //  Number of Clocks processed: 5
+    //
+    //  If a clock cannot be found in the top level pins section,
+    //  that means it is an internal clock.
+    //
+    //=============================================================
+-->
+
+<library name = "generic">
+
+</library>
+
+<library name = "lsccsp">
+
+</library>
+
+<library name = "lsccspparam">
+
+</library>
+
+<library name = "work">
+
+<unit name = "pll">
+
+    <!--
+        Top Level Pins: 5
+    -->
+
+    <pins>
+        <pitem  name = "ref_clk_i"  direction = "in"  />
+        <pitem  name = "rst_n_i"  direction = "in"  />
+        <pitem  name = "lock_o"  direction = "out"  />
+        <pitem  name = "outcore_o"  direction = "out"  />
+        <pitem  name = "outglobal_o"  direction = "out"  />
+    </pins>
+
+    <!--
+        Instances in netlist: 3
+    -->
+
+    <instance  name = "lscc_pll_inst/u_PLL_B"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "DYNAMICDELAY4"  direction = "in"  />
+        <pitem  name = "DYNAMICDELAY5"  direction = "in"  />
+        <pitem  name = "DYNAMICDELAY6"  direction = "in"  />
+        <pitem  name = "DYNAMICDELAY7"  direction = "in"  />
+        <pitem  name = "DYNAMICDELAY0"  direction = "in"  />
+        <pitem  name = "DYNAMICDELAY1"  direction = "in"  />
+        <pitem  name = "DYNAMICDELAY2"  direction = "in"  />
+        <pitem  name = "DYNAMICDELAY3"  direction = "in"  />
+        <pitem  name = "REFERENCECLK"  direction = "in"  />
+        <pitem  name = "RESET_N"  direction = "in"  />
+        <pitem  name = "BYPASS"  direction = "in"  />
+        <pitem  name = "LATCH"  direction = "in"  />
+        <pitem  name = "LOCK"  direction = "out"  />
+        <pitem  name = "OUTCORE"  direction = "out"  />
+        <pitem  name = "OUTGLOBAL"  direction = "out"  />
+        <pitem  name = "OUTCOREB"  direction = "out"  />
+        <pitem  name = "OUTGLOBALB"  direction = "out"  />
+        <pitem  name = "SCLK"  direction = "in"  />
+        <pitem  name = "SDI"  direction = "in"  />
+        <pitem  name = "SDO"  direction = "out"  />
+        <pitem  name = "FEEDBACK"  direction = "in"  />
+        <pitem  name = "INTFBOUT"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "lscc_pll_inst/gnd"  />
+        <nitem  name = "ref_clk_i"  />
+        <nitem  name = "rst_n_i"  />
+        <nitem  name = "gnd"  />
+        <nitem  name = "lock_o"  />
+        <nitem  name = "outcore_o"  />
+        <nitem  name = "outglobal_o"  />
+        <nitem  name = "lscc_pll_inst/outcoreb_o"  />
+        <nitem  name = "lscc_pll_inst/outglobalb_o"  />
+        <nitem  name = "lscc_pll_inst/sclk_i"  />
+        <nitem  name = "lscc_pll_inst/sdi_i"  />
+        <nitem  name = "lscc_pll_inst/sdo_o"  />
+        <nitem  name = "lscc_pll_inst/feedback_w"  />
+        </nets>
+    </instance>
+
+    <instance  name = "lscc_pll_inst"  />
+    <instance  name = "u_PLL_B"  />
+    <!--
+        Views in design "pll": 1
+    -->
+
+    <views>
+        <view  name = "lscc_pll(DIVR="0",DIVF="52",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")"  />
+    </views>
+
+</unit>
+
+</library>
+
+</top>

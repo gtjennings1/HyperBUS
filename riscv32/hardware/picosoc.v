@@ -112,7 +112,7 @@ module picosoc (
 	wire spimem_ready;
 	wire [31:0] spimem_rdata;
 
-	reg ram_ready;
+	wire ram_ready;
 	wire [31:0] ram_rdata;
 
 	wire mem_addr_periph, mem_addr_ext_ram;

@@ -1,0 +1,19 @@
+----------------------------------------------------------------------
+Report for cell pll.TECH
+Register bits:  0 of 5280 (0.000%)
+I/O cells:      5
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                 IB         2          100.0
+                                 OB         3          100.0
+                              PLL_B         1          100.0
+SUB MODULES
+                           lscc_pll         1
+                              TOTAL         7
+----------------------------------------------------------------------
+Report for cell lscc_pll.v1
+Instance Path : lscc_pll_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+                              TOTAL         1
