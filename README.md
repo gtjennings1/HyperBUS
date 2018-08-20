@@ -5,9 +5,13 @@ You can download a Verilog model of the Cypress HyperRAM from their website.
 http://www.cypress.com/verilog/s27kl0641-verilog
 
 radiant/      - Lattice Radiant project of the RISC-V + HyperRAM controller design
+
 iCEStorm/     - iCEStorm project of the RISC-V + HyperRAM controller design
+
 riscv32/      - picorv32 and picoSoC RISC-V files
+
 simulation/   - Simulation of standalone controller
+
 standalone/   - Simple HyperRam Controller
 
 Sources:
