@@ -1,0 +1,66 @@
+# On board
+set_io -nowarn flash_csb 16
+set_io -nowarn flash_clk 15
+set_io -nowarn flash_io0 14
+set_io -nowarn flash_io1 17
+
+# 12 MHz clock
+#set_io -nowarn CLK 35 # input
+
+# Buttons
+#set_io -nowarn B0 23 # input
+#set_io -nowarn B1 25 # input
+#set_io -nowarn B2 26 # input
+#set_io -nowarn B3 27 # input
+#set_io -nowarn B4 45 # input
+#set_io -nowarn B5 48 # input
+
+# Audio jack
+#set_io -nowarn AUDIO 37 # output
+
+# PMOD connector
+set_io -nowarn flash_io2 32
+set_io -nowarn flash_io3 31
+#set_io -nowarn PMOD2 34
+#set_io -nowarn PMOD3 43
+set_io -nowarn uart_rx 36  # PMOD4
+#set_io -nowarn PMOD5 42
+set_io -nowarn uart_tx 38  # PMOD6
+#set_io -nowarn PMOD7 28
+
+# RGB LED Driver
+set_io -nowarn LED_G 39 # output
+set_io -nowarn LED_B 40 # output
+set_io -nowarn LED_R 41 # output
+
+# Hyperbus
+set_io -nowarn CSN0  12
+set_io -nowarn CSN1  21
+set_io -nowarn CLK  46
+set_io -nowarn CLKN 47
+set_io -nowarn RWDS 13
+set_io -nowarn DQ[7] 3  
+set_io -nowarn DQ[6] 4
+set_io -nowarn DQ[5] 44 
+set_io -nowarn DQ[4] 6
+set_io -nowarn DQ[3] 9 
+set_io -nowarn DQ[2] 11 
+set_io -nowarn DQ[1] 18 
+set_io -nowarn DQ[0] 19
+set_io -nowarn RESET_N 2
+
+# LCD connector
+#set_io -nowarn LCD_CLK 18 # output
+#set_io -nowarn LCD_DEN 19 # output
+#set_io -nowarn LCD_VS  11 # output
+#set_io -nowarn LCD_HS  9  # output
+#set_io -nowarn LCD_RST 2  # output
+#set_io -nowarn LCD_DAT[7]  6  # output
+#set_io -nowarn LCD_DAT[6]  44 # output
+#set_io -nowarn LCD_DAT[5]  4  # output
+#set_io -nowarn LCD_DAT[4]  3  # output
+#set_io -nowarn LCD_DAT[3]  48 # output
+#set_io -nowarn LCD_DAT[2]  45 # output
+#set_io -nowarn LCD_DAT[1]  47 # output
+#set_io -nowarn LCD_DAT[0]  46 # output
+#set_io -nowarn LCD_PWM 13 # output
