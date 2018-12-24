@@ -38,7 +38,7 @@ module pll(
 	output locked
 	);
 
-PLL_B #(
+SB_PLL40_CORE #(
 		.FEEDBACK_PATH("SIMPLE"),
 		.DIVR(4'b0000),		// DIVR =  0
 		.DIVF(7'b0110010),	// DIVF = 50
