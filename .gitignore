@@ -4,5 +4,8 @@ radiant/*
 !radiant/pll/
 !radiant/*.pdc
 !radiant/*.rdf
+icestorm/*
+!icestorm/hyperram.sh
+
 
 
