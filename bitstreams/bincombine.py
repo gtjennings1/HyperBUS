@@ -1,5 +1,5 @@
 import sys
-
+import io
 
 # Combines binary files based on provided offsets
 # Example of usage:
@@ -27,7 +27,7 @@ for offset,file in zip(args[0::2], args[1::2]):
         print '{}: {}'.format(offset, file)
         offset2file[int(offset, 0)] = file
 
-resultFile = open(resultfilename, 'a')
+resultFile = open(resultfilename, 'wb')
 offsets = list(offset2file.keys())
 offsets.sort()
 
@@ -41,12 +41,12 @@ for idx in range(0, len(offsets)):
 
     for byte in range(0, positions_diff):
         # print('Addind placeholder byte {} at position {}'.format(toHex(255),toHex(current_pos)))
-        print('Addind placeholder byte {} at position {}'.format('1'.encode("hex"),toHex(current_pos)))
-        resultFile.write('1')
+        print('Addind placeholder byte {} at position {}'.format(toHex(255),toHex(current_pos)))
+        resultFile.write(b'\xff')
         current_pos += 1
 
     filename = offset2file[offset]
-    file_content = open(filename, "rb").read()
+    file_content = io.open(filename, 'rb').read()
 
     resultFile.write(file_content)
     current_pos += len(file_content)
