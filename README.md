@@ -70,4 +70,4 @@ FPGA Project contains a RISC-V core with the hyperram controller connected.  Wri
   - Green = read/write tests are passing
   - Blue = read/write tests are failing
 
-Additionally, there is a UART TX port on pin 36.  If you connect it to a terminal window you can monitor the tests.  You can use the Adafruit FT232H USB board for this and connect a fly wire between pin 38 on the UPDuino and D1 and a ground wire between both boards.
+Additionally, there is a UART TX port on pin 36.  If you connect it to a terminal window you can monitor the tests.  You can use the Adafruit FT232H USB board for this and connect a fly wire between pin 38 on the UPDuino and D1 and a ground wire between both boards.  Set the baud rate to 9600.
